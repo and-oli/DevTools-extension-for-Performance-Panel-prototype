@@ -10,7 +10,7 @@ async function sendFetchData(sendResponse) {
     const serverProcessingTime = serverEndForClockSync - serverStartForClockSync;
     const averageNetworkDelay = (roundtripTime - serverProcessingTime) / 2;
     const serverClientTimeOffset = serverStartForClockSync - clientStartForClockSync - averageNetworkDelay;
-    const timingData = {timeOrigin: jsonData.timeOrigin - serverClientTimeOffset, timings: jsonData.timings};
+    const timingData = {timeOrigin: jsonData.timeOrigin, timings: jsonData.timings};
     sendResponse({command: 'FETCH_RESPONSE', data: timingData});
 }
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
