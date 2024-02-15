@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "version": "0.1.0",
+    "name": "Prototype of Performance Panel Extension",
+    "description": "A DevTools extension for the perf panel that is not the least dumb",
+    "permissions": ["activeTab", "scripting"],
+    "devtools_page": "DevToolsPlugin.html",
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "host_permissions": ["http://*/*", "https://*/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "minimum_chrome_version": "112.0.5569.0"
+  }
