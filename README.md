@@ -11,7 +11,7 @@ This repository in particular contains a devtools extension that prototypes the 
 proposed API. It is supposed to be used with a website [example built with NextJS](https://github.com/and-oli/corgi-collage-nextjs) from which data is gathered and added to the Perfomance Panel as extension data using the proposed
 `devtools.performance` api. 
 
-# Data flow
+## Data flow
 
 The extension data consists of measurements taken in the server during the website server side
 rendering on page load. It is assumed that once the website finishes loading these measurements have
@@ -27,3 +27,8 @@ back to the caller. This way, once `devtools.performance.onProfilingStopped` has
 the [extension](./DevToolsPlugin.js) calls the service worker to fetch the data, and this forwards
 the request to the content script. The data is then passed back the chain and injected to DevTools
 by the extension using the proposed `devtools.performance.registerPerformanceExtensionData` API.
+
+## Try it
+A deployed version of the application this extension works with is available at
+https://corgi-collage-react.vercel.app/. You need to install the extension in a Chrome version that
+contains the changes to DevTools that implement the proposed devtools.performance API.
