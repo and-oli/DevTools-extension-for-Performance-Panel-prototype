@@ -30,5 +30,5 @@ by the extension using the proposed `devtools.performance.registerPerformanceExt
 
 ## Try it
 A deployed version of the application this extension works with is available at
-https://corgi-collage-react.vercel.app/. You need to install the extension in a Chrome version that
+https://corgi-collage-nextjs.vercel.app/. You need to install the extension in a Chrome version that
 contains the changes to DevTools that implement the proposed devtools.performance API.
