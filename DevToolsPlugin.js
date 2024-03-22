@@ -1,11 +1,11 @@
 
 console.log("Performance panel Extension loaded");
 
-await chrome.devtools.performance.onProfilingStarted.addListener(() => {
+chrome.devtools.performance.onProfilingStarted.addListener(() => {
   console.log("Profiling started");
 });
 
-await chrome.devtools.performance.onProfilingStopped.addListener(() => {
+chrome.devtools.performance.onProfilingStopped.addListener(() => {
   console.log("Profiling stopped");
   const backgroundPageConnection = chrome.runtime.connect({
     name: "devtools-page",
@@ -32,7 +32,7 @@ await chrome.devtools.performance.onProfilingStopped.addListener(() => {
   }, 1500);
 });
 
-await chrome.devtools.performance.onProfileParsed.addListener((_profile) => {
+chrome.devtools.performance.onProfileParsed.addListener((_profile) => {
   console.log("Profile parsed");
 });
 
